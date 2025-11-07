@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  transaction-api:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: transaction-aggregation-api
+    ports:
+      - "5062:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:8080
+    restart: unless-stopped
+
+
+networks:
+  default:
+    name: transaction-network
