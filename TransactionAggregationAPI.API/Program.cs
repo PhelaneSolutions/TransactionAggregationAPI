@@ -19,6 +19,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // AutoMapper
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+// Repositories
 builder.Services.AddSingleton<ITransactionRepository, MockTransactionRepository>();
 builder.Services.AddSingleton<ICustomerRepository, MockCustomerRepository>();
 builder.Services.AddSingleton<IAccountRepository, MockAccountRepository>();
