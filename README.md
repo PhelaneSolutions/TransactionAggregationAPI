@@ -36,37 +36,9 @@ This project follows **Clean Architecture** principles with clear separation of 
 - **.NET 8**: Latest .NET framework
 - **ASP.NET Core Web API**: RESTful API framework
 - **Mock Data Sources**: In-memory repositories with 100+ realistic transactions
-- **AutoMapper**: Object-to-object mapping
 - **Data Annotations**: Comprehensive input validation with custom business rules
 - **Swagger/OpenAPI**: API documentation
 - **xUnit**: Testing framework
-
-## 📊 API Endpoints
-
-### Transactions
-- `GET /api/transactions` - Get all transactions
-- `GET /api/transactions/{id}` - Get transaction by ID
-- `GET /api/transactions/customer/{customerId}` - Get transactions by customer
-- `GET /api/transactions/account/{accountId}` - Get transactions by account
-- `GET /api/transactions/daterange?startDate={date}&endDate={date}` - Get transactions by date range
-- `GET /api/transactions/category/{category}` - Get transactions by category
-- `GET /api/transactions/summary` - Get aggregated transaction summary
-- `POST /api/transactions` - Create new transaction
-- `POST /api/transactions/aggregate` - Trigger data source aggregation
-
-### Customers
-- `GET /api/customers` - Get all customers
-- `GET /api/customers/{id}` - Get customer by ID
-- `GET /api/customers/email/{email}` - Get customer by email
-- `POST /api/customers` - Create new customer
-
-### Accounts
-- `GET /api/accounts` - Get all accounts
-- `GET /api/accounts/{id}` - Get account by ID
-- `GET /api/accounts/customer/{customerId}` - Get accounts by customer
-- `GET /api/accounts/type/{type}` - Get accounts by type (Checking, Savings, Credit, etc.)
-- `GET /api/accounts/summary` - Get account summary with statistics
-- `POST /api/accounts` - Create new account
 
 ## 🏃‍♂️ Getting Started
 
@@ -120,52 +92,6 @@ dotnet test
 
 # Run with coverage
 dotnet test --collect:"XPlat Code Coverage"
-```
-
-### Sample API Calls
-
-**Get all transactions:**
-```bash
-curl -X GET "http://localhost:5062/api/transactions" -H "accept: application/json"
-```
-
-**Get transaction summary:**
-```bash
-curl -X GET "http://localhost:5062/api/transactions/summary" -H "accept: application/json"
-```
-
-**Get all accounts:**
-```bash
-curl -X GET "http://localhost:5062/api/accounts" -H "accept: application/json"
-```
-
-**Get customer's accounts:**
-```bash
-curl -X GET "http://localhost:5062/api/accounts/customer/CUST001" -H "accept: application/json"
-```
-
-**Get account summary:**
-```bash
-curl -X GET "http://localhost:5062/api/accounts/summary" -H "accept: application/json"
-```
-
-**Create new account:**
-```bash
-curl -X POST "http://localhost:5062/api/accounts" \
-  -H "accept: application/json" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "customerId": "CUST001",
-    "accountName": "John Doe Investment Account",
-    "type": 3,
-    "currency": "USD",
-    "initialBalance": 5000.00
-  }'
-```
-
-**Trigger transaction aggregation:**
-```bash
-curl -X POST "http://localhost:5062/api/transactions/aggregate" -H "accept: application/json"
 ```
 
 ## 🐳 Docker Support
@@ -255,47 +181,6 @@ The application uses `appsettings.json` for configuration:
   "AllowedHosts": "*"
 }
 ```
-
-### Logging
-Configured for structured logging with different levels for development and production. No database configuration needed as the application uses in-memory mock data.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📋 Development Guidelines
-
-- Follow Clean Architecture principles
-- Implement proper error handling and logging
-- Write comprehensive unit tests
-- Use dependency injection throughout
-- Follow RESTful API design patterns
-- Maintain clean, documented code
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🏆 Production Readiness
-
-This API demonstrates production-grade development practices including:
-
-- ✅ **Clean Architecture**: Proper separation of concerns
-- ✅ **SOLID Principles**: Maintainable and extensible code
-- ✅ **Dependency Injection**: Loosely coupled components
-- ✅ **Input Validation**: Comprehensive data validation with business rules
-- ✅ **Error Handling**: Proper exception handling and HTTP status codes
-- ✅ **Logging**: Structured logging throughout the application
-- ✅ **Testing**: Comprehensive unit and integration test framework
-- ✅ **Documentation**: Swagger/OpenAPI specification
-- ✅ **Mock Data Architecture**: In-memory repositories with realistic sample data
-- ✅ **Configuration**: Environment-based configuration management
-- ✅ **Docker**: Containerization support
-
 ## 🚧 Future Enhancements
 
 - Authentication & Authorization (JWT tokens)
