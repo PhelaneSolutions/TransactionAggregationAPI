@@ -22,15 +22,6 @@ This project follows **Clean Architecture** principles with clear separation of 
 - **Multi-Customer Support**: Manage multiple customers and their accounts
 - **Comprehensive APIs**: Extensive REST API endpoints for querying and managing data
 
-### Technical Features
-- **Clean Architecture**: Domain-driven design with proper dependency inversion
-- **In-Memory Data**: Mock repositories with realistic sample data
-- **AutoMapper**: Automatic DTO mapping
-- **Comprehensive Validation**: Data annotations with custom business rules
-- **Swagger/OpenAPI**: Interactive API documentation
-- **Logging**: Structured logging throughout the application
-- **Production-Ready**: Error handling, input validation, and proper HTTP status codes
-
 ## 🛠️ Technology Stack
 
 - **.NET 8**: Latest .NET framework
@@ -44,7 +35,6 @@ This project follows **Clean Architecture** principles with clear separation of 
 
 ### Prerequisites
 - .NET 8 SDK
-- Visual Studio Code (recommended)
 - Git
 
 ### Installation & Setup
