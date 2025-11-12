@@ -180,14 +180,3 @@ The application uses `appsettings.json` for configuration:
   },
   "AllowedHosts": "*"
 }
-```
-## 🚧 Future Enhancements
-
-- Authentication & Authorization (JWT tokens)
-- Real-time transaction notifications
-- Advanced analytics and reporting
-- Integration with real financial APIs
-- Caching layer (Redis)
-- Message queuing (RabbitMQ/Azure Service Bus)
-- Microservices decomposition
-- GraphQL API support
